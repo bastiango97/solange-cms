@@ -1,0 +1,1672 @@
+version: 1
+directus: 11.6.1
+vendor: postgres
+collections:
+  - collection: campaign_tiers
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: campaign_tiers
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: campaign_tiers
+  - collection: funding_campaigns
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: funding_campaigns
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: funding_campaigns
+  - collection: hotel_photos
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: hotel_photos
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: hotel_photos
+  - collection: hotels
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: hotels
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: hotels
+  - collection: payments
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: payments
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: payments
+  - collection: users
+    meta:
+      accountability: all
+      archive_app_filter: true
+      archive_field: null
+      archive_value: null
+      collapse: open
+      collection: users
+      color: null
+      display_template: null
+      group: null
+      hidden: false
+      icon: null
+      item_duplication_fields: null
+      note: null
+      preview_url: null
+      singleton: false
+      sort: null
+      sort_field: null
+      translations: null
+      unarchive_value: null
+      versioning: false
+    schema:
+      name: users
+fields:
+  - collection: campaign_tiers
+    field: campaign_id
+    type: uuid
+    meta:
+      collection: campaign_tiers
+      conditions: null
+      display: null
+      display_options: null
+      field: campaign_id
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{campaign_id}}{{hotel_id}}'
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: campaign_id
+      table: campaign_tiers
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: funding_campaigns
+      foreign_key_column: campaign_id
+  - collection: campaign_tiers
+    field: tier_id
+    type: uuid
+    meta: null
+    schema:
+      name: tier_id
+      table: campaign_tiers
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: campaign_tiers
+    field: tier_number
+    type: integer
+    meta: null
+    schema:
+      name: tier_number
+      table: campaign_tiers
+      data_type: integer
+      default_value: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: campaign_tiers
+    field: required_amount
+    type: decimal
+    meta: null
+    schema:
+      name: required_amount
+      table: campaign_tiers
+      data_type: numeric
+      default_value: null
+      max_length: null
+      numeric_precision: 15
+      numeric_scale: 2
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: campaign_tiers
+    field: reward_description
+    type: text
+    meta: null
+    schema:
+      name: reward_description
+      table: campaign_tiers
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: campaign_tiers
+    field: created_at
+    type: dateTime
+    meta: null
+    schema:
+      name: created_at
+      table: campaign_tiers
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: hotel_id
+    type: uuid
+    meta:
+      collection: funding_campaigns
+      conditions: null
+      display: null
+      display_options: null
+      field: hotel_id
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: hotel_id
+      table: funding_campaigns
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: hotels
+      foreign_key_column: hotel_id
+  - collection: funding_campaigns
+    field: campaign_id
+    type: uuid
+    meta: null
+    schema:
+      name: campaign_id
+      table: funding_campaigns
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: goal_amount
+    type: decimal
+    meta: null
+    schema:
+      name: goal_amount
+      table: funding_campaigns
+      data_type: numeric
+      default_value: null
+      max_length: null
+      numeric_precision: 15
+      numeric_scale: 2
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: current_amount
+    type: decimal
+    meta: null
+    schema:
+      name: current_amount
+      table: funding_campaigns
+      data_type: numeric
+      default_value: 0
+      max_length: null
+      numeric_precision: 15
+      numeric_scale: 2
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: start_date
+    type: dateTime
+    meta: null
+    schema:
+      name: start_date
+      table: funding_campaigns
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: end_date
+    type: dateTime
+    meta: null
+    schema:
+      name: end_date
+      table: funding_campaigns
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: is_active
+    type: boolean
+    meta: null
+    schema:
+      name: is_active
+      table: funding_campaigns
+      data_type: boolean
+      default_value: true
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: created_at
+    type: dateTime
+    meta: null
+    schema:
+      name: created_at
+      table: funding_campaigns
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: funding_campaigns
+    field: updated_at
+    type: dateTime
+    meta: null
+    schema:
+      name: updated_at
+      table: funding_campaigns
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotel_photos
+    field: hotel_id
+    type: uuid
+    meta:
+      collection: hotel_photos
+      conditions: null
+      display: null
+      display_options: null
+      field: hotel_id
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        template: '{{name}}'
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: hotel_id
+      table: hotel_photos
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: hotels
+      foreign_key_column: hotel_id
+  - collection: hotel_photos
+    field: photo_file
+    type: uuid
+    meta:
+      collection: hotel_photos
+      conditions: null
+      display: null
+      display_options: null
+      field: photo_file
+      group: null
+      hidden: false
+      interface: file
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: 1
+      special:
+        - file
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: photo_file
+      table: hotel_photos
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: directus_files
+      foreign_key_column: id
+  - collection: hotel_photos
+    field: photo_url
+    type: text
+    meta:
+      collection: hotel_photos
+      conditions: null
+      display: null
+      display_options: null
+      field: photo_url
+      group: null
+      hidden: true
+      interface: null
+      note: null
+      options: null
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: photo_url
+      table: hotel_photos
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotel_photos
+    field: photo_id
+    type: uuid
+    meta: null
+    schema:
+      name: photo_id
+      table: hotel_photos
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotel_photos
+    field: uploaded_at
+    type: dateTime
+    meta: null
+    schema:
+      name: uploaded_at
+      table: hotel_photos
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: user_id
+    type: uuid
+    meta:
+      collection: hotels
+      conditions: null
+      display: null
+      display_options:
+        template: '{{email}}'
+      field: user_id
+      group: null
+      hidden: false
+      interface: select-dropdown-m2o
+      note: null
+      options:
+        filter: null
+        template: '{{email}}'
+      readonly: false
+      required: false
+      sort: null
+      special: null
+      translations: null
+      validation: null
+      validation_message: null
+      width: full
+    schema:
+      name: user_id
+      table: hotels
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: users
+      foreign_key_column: user_id
+  - collection: hotels
+    field: hotel_id
+    type: uuid
+    meta: null
+    schema:
+      name: hotel_id
+      table: hotels
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: name
+    type: string
+    meta: null
+    schema:
+      name: name
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: calle
+    type: string
+    meta: null
+    schema:
+      name: calle
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: numero_exterior
+    type: string
+    meta: null
+    schema:
+      name: numero_exterior
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 10
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: numero_interior
+    type: string
+    meta: null
+    schema:
+      name: numero_interior
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 10
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: colonia
+    type: string
+    meta: null
+    schema:
+      name: colonia
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: delegacion
+    type: string
+    meta: null
+    schema:
+      name: delegacion
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: municipio
+    type: string
+    meta: null
+    schema:
+      name: municipio
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: ciudad
+    type: string
+    meta: null
+    schema:
+      name: ciudad
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: estado
+    type: string
+    meta: null
+    schema:
+      name: estado
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 100
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: codigo_postal
+    type: string
+    meta: null
+    schema:
+      name: codigo_postal
+      table: hotels
+      data_type: character varying
+      default_value: null
+      max_length: 10
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: description
+    type: text
+    meta: null
+    schema:
+      name: description
+      table: hotels
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: created_at
+    type: dateTime
+    meta: null
+    schema:
+      name: created_at
+      table: hotels
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: hotels
+    field: updated_at
+    type: dateTime
+    meta: null
+    schema:
+      name: updated_at
+      table: hotels
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: payment_id
+    type: uuid
+    meta: null
+    schema:
+      name: payment_id
+      table: payments
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: user_id
+    type: uuid
+    meta: null
+    schema:
+      name: user_id
+      table: payments
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: users
+      foreign_key_column: user_id
+  - collection: payments
+    field: campaign_id
+    type: uuid
+    meta: null
+    schema:
+      name: campaign_id
+      table: payments
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: funding_campaigns
+      foreign_key_column: campaign_id
+  - collection: payments
+    field: tier_id
+    type: uuid
+    meta: null
+    schema:
+      name: tier_id
+      table: payments
+      data_type: uuid
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: campaign_tiers
+      foreign_key_column: tier_id
+  - collection: payments
+    field: amount
+    type: decimal
+    meta: null
+    schema:
+      name: amount
+      table: payments
+      data_type: numeric
+      default_value: null
+      max_length: null
+      numeric_precision: 15
+      numeric_scale: 2
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: payment_service
+    type: string
+    meta: null
+    schema:
+      name: payment_service
+      table: payments
+      data_type: character varying
+      default_value: null
+      max_length: 50
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: payment_service_id
+    type: string
+    meta: null
+    schema:
+      name: payment_service_id
+      table: payments
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: is_reward_granted
+    type: boolean
+    meta: null
+    schema:
+      name: is_reward_granted
+      table: payments
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: created_at
+    type: dateTime
+    meta: null
+    schema:
+      name: created_at
+      table: payments
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: updated_at
+    type: dateTime
+    meta: null
+    schema:
+      name: updated_at
+      table: payments
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: payment_status
+    type: string
+    meta: null
+    schema:
+      name: payment_status
+      table: payments
+      data_type: character varying
+      default_value: pending
+      max_length: 20
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: currency
+    type: string
+    meta: null
+    schema:
+      name: currency
+      table: payments
+      data_type: character varying
+      default_value: MXN
+      max_length: 3
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: payments
+    field: payment_response
+    type: json
+    meta: null
+    schema:
+      name: payment_response
+      table: payments
+      data_type: jsonb
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: user_id
+    type: uuid
+    meta: null
+    schema:
+      name: user_id
+      table: users
+      data_type: uuid
+      default_value: gen_random_uuid()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: true
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: email
+    type: string
+    meta: null
+    schema:
+      name: email
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: true
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: password_hash
+    type: string
+    meta: null
+    schema:
+      name: password_hash
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: false
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: first_name
+    type: string
+    meta: null
+    schema:
+      name: first_name
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 50
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: last_name
+    type: string
+    meta: null
+    schema:
+      name: last_name
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 50
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: is_active
+    type: boolean
+    meta: null
+    schema:
+      name: is_active
+      table: users
+      data_type: boolean
+      default_value: true
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: is_verified
+    type: boolean
+    meta: null
+    schema:
+      name: is_verified
+      table: users
+      data_type: boolean
+      default_value: false
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: role
+    type: string
+    meta: null
+    schema:
+      name: role
+      table: users
+      data_type: character varying
+      default_value: user
+      max_length: 50
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: created_at
+    type: dateTime
+    meta: null
+    schema:
+      name: created_at
+      table: users
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: updated_at
+    type: dateTime
+    meta: null
+    schema:
+      name: updated_at
+      table: users
+      data_type: timestamp without time zone
+      default_value: now()
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: verification_token
+    type: string
+    meta: null
+    schema:
+      name: verification_token
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: verification_expires
+    type: dateTime
+    meta: null
+    schema:
+      name: verification_expires
+      table: users
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: reset_token
+    type: string
+    meta: null
+    schema:
+      name: reset_token
+      table: users
+      data_type: character varying
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+  - collection: users
+    field: reset_expires
+    type: dateTime
+    meta: null
+    schema:
+      name: reset_expires
+      table: users
+      data_type: timestamp without time zone
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_nullable: true
+      is_unique: false
+      is_indexed: false
+      is_primary_key: false
+      is_generated: false
+      generation_expression: null
+      has_auto_increment: false
+      foreign_key_table: null
+      foreign_key_column: null
+relations:
+  - collection: campaign_tiers
+    field: campaign_id
+    related_collection: funding_campaigns
+    meta: null
+    schema:
+      table: campaign_tiers
+      column: campaign_id
+      foreign_key_table: funding_campaigns
+      foreign_key_column: campaign_id
+      constraint_name: campaign_tiers_campaign_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: funding_campaigns
+    field: hotel_id
+    related_collection: hotels
+    meta: null
+    schema:
+      table: funding_campaigns
+      column: hotel_id
+      foreign_key_table: hotels
+      foreign_key_column: hotel_id
+      constraint_name: funding_campaigns_hotel_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: hotel_photos
+    field: photo_file
+    related_collection: directus_files
+    meta:
+      junction_field: null
+      many_collection: hotel_photos
+      many_field: photo_file
+      one_allowed_collections: null
+      one_collection: directus_files
+      one_collection_field: null
+      one_deselect_action: nullify
+      one_field: null
+      sort_field: null
+    schema:
+      table: hotel_photos
+      column: photo_file
+      foreign_key_table: directus_files
+      foreign_key_column: id
+      constraint_name: hotel_photos_photo_file_foreign
+      on_update: NO ACTION
+      on_delete: SET NULL
+  - collection: hotel_photos
+    field: hotel_id
+    related_collection: hotels
+    meta: null
+    schema:
+      table: hotel_photos
+      column: hotel_id
+      foreign_key_table: hotels
+      foreign_key_column: hotel_id
+      constraint_name: hotel_photos_hotel_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: hotels
+    field: user_id
+    related_collection: users
+    meta: null
+    schema:
+      table: hotels
+      column: user_id
+      foreign_key_table: users
+      foreign_key_column: user_id
+      constraint_name: hotels_user_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: payments
+    field: user_id
+    related_collection: users
+    meta: null
+    schema:
+      table: payments
+      column: user_id
+      foreign_key_table: users
+      foreign_key_column: user_id
+      constraint_name: payments_user_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: payments
+    field: campaign_id
+    related_collection: funding_campaigns
+    meta: null
+    schema:
+      table: payments
+      column: campaign_id
+      foreign_key_table: funding_campaigns
+      foreign_key_column: campaign_id
+      constraint_name: payments_campaign_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
+  - collection: payments
+    field: tier_id
+    related_collection: campaign_tiers
+    meta: null
+    schema:
+      table: payments
+      column: tier_id
+      foreign_key_table: campaign_tiers
+      foreign_key_column: tier_id
+      constraint_name: payments_tier_id_fkey
+      on_update: NO ACTION
+      on_delete: CASCADE
